@@ -651,7 +651,8 @@ Constraints: Try to write everything as `describe`, `context`, and `it` blocks. 
 - Explain what is RSpec's basic syntax. Specially how does `describe` and `context` differ?
 
 >Answers
-1. Design/architecture/maintainability/fewer bugs.
+
+>1. Design/architecture/maintainability/fewer bugs.
 2. Unit tests are intended to test small, little blocks of code, and make sure a specific input results in a specific output. They are useful for us as developers. Functional tests verify our apps at the level of user interaction.  They visit web pages, click on links, validate the DOM.  
 3. RSpec is a testing framework for the Ruby, makes writing tests much more simple for us as developers! We can use Rspec to write unit tests.
 4. Red, Green, Refactor.  We write a test that fails, indicating that the feature is not supported.  Then, we adjust code until it passes (turns Green).  Lastly, we refactor our app using the knowledge we gained from supporting the spec.
