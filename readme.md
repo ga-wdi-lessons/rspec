@@ -1,14 +1,14 @@
 # RSpec
 
 ## Learning Objectives
-- Explain the purpose Unit testing
+- Explain the purpose and benefits of Unit testing
 - Describe TDD and it's importance
 - Explain what is RSpec
 - Compare and contrast `expectations` and `matchers`
-- Compare and Contrast common RSpec terms including `"describe"`, `"it"`, `"context"`, `"expect"`,  `"subject"`,  `"let"`
+- Compare and contrast common RSpec terms including `"describe"`, `"it"`, `"context"`, `before(:each)`, `before(:all)`, `"subject"`,  `"let"`
 - Write and pass unit tests using RSpec
 
-## Framing: Introduction to Test Driven Development
+## Framing: Introduction to Test-Driven Development
 
 ### Why do we implement tests in our applications? (5 min)
 
@@ -87,7 +87,6 @@ RSpec makes it easier to write tests.  It's a Domain Specific Language for writi
 > DSL: "Domain Specific Language" that is created specifically to solve problems in a particular domain and is not intended to be able to solve problems outside it
 
 ---
-
 ### We-Do: RSpec Example (5 min)
 
 Code is available here: [rspec_person_example](https://github.com/ga-dc/rspec_person_example)
@@ -182,7 +181,7 @@ end
 
 ## We-Do - Create a Unit Test using RSpec
 
-We are going to be creating something similar to the above example. Instead we will be writing a spec for creating a new ruby class of "Dog"
+We are going to be creating something similar to the above example. Instead we will be writing a spec for creating a new ruby class of `Dog`
 
 ### RSpec Set-up (5 min)
 
@@ -445,7 +444,7 @@ Before moving on, let's change the first test so it passes again!
 
 **Instructions:**
 
-1. Write a Test that confirms the following: "has an Integer for a hunger level"
+1. Write a Spec that confirms the following: "has an Integer for a hunger level"
 
 ## We-Do: Additional Tests Using Context (5 min)
 
@@ -470,9 +469,9 @@ Also, **`context` does literally the exact same thing as `describe`**. They're i
 
 The hash `#` in front of `set_hunger_level` also doesn't do anything -- it's just what programmers usually use to indicate that something is a method, in the same way they use `$` to indicate a command you should enter in the terminal.
 
-**`describe` and `context` are not tests; they just help organize them. Only `it` is a test.**
+`describe` and `context` are not tests; they just help organize them. Only `it` is a test.
 
- * `it` also is **childless**. `it` cannot have any `describe`, `context`, or `it` blocks inside it.
+`it` also is **childless**. `it` cannot have any `describe`, `context`, or `it` blocks inside it.
 
  <!-- RSpec is all about making tests easy to read from an English standpoint. -->
 
@@ -606,7 +605,7 @@ We use RSpec to test GArnet, the attendance/homework tracking app. Before any ch
 
 [Here's what that looks like. Seem familiar?](https://travis-ci.org/ga-dc/garnet/builds/89503768#L241) Clearly there are a lot of tests that are just pending and don't do anything yet -- almost 60! These dramatically help us plan.
 
-## You-Do: Purrspec (25 min)
+## You-Do: Purrspec (20 min)
 
 **Instructions:**
 
