@@ -20,7 +20,7 @@ Think back to the way you code.  You create a part of a web page, then you brows
 
 **Unit tests** check the smallest level. The functionality of a specific method.
 
-**Acceptance tests** verify our apps at the level of user interaction.  They visit web pages, click on links, validate the DOM.  
+**Acceptance tests** verify our apps at the level of user interaction.  Testing for things when users visit web pages, click on links, validate the DOM, etc.  
 
   * The "units" in unit tests are individual methods. Unit tests are intended to test small, little blocks of code, and make sure a specific input results in a specific output.
 
@@ -76,7 +76,7 @@ When you write tests first, you're creating a tidy little checklist for yourself
 
 * Requires time and effort.
 
-* Could me more costly to an organization when there are changes in requirements.
+* Could be more costly to an organization when there are changes in requirements.
 
 ## What is RSpec? (5 min)
 
@@ -171,9 +171,11 @@ end
 
 1. Fork and Clone the Rspec Person Example Repo: https://github.com/ga-dc/rspec_person_example
 
-2. In the root of `rspec_person_example directory` running `$ rspec` in our terminal.
+2. In the root of `rspec_person_example directory` run `$ rspec --init` in our terminal.
 
-3. See the tests pass, now take a few minutes to adjust the code:
+3. Now run `$ rspec` in our terminal.
+
+4. See the tests pass, now take a few minutes to adjust the code:
 
   * Comment-out various parts of the code, delete methods, add methods back in, etc.. and run the specs a few times.
 
@@ -217,13 +219,14 @@ $ rspec
 
 #### Set up the directory
 
-Now, let's add a file called `dog_spec.rb` in our `spec` directory:
+Now, let's create a `spec` directory and add a file called `dog_spec.rb`. Additionally, we will be creating a `models` directory and a file where we will define our class `Dog`
 
 ```sh
 $ mkdir spec
 $ touch spec/dog_spec.rb
 $ mkdir models
 $ touch models/dog.rb
+$ rspec --init
 ```
 >`rspec --init`
 
@@ -318,7 +321,7 @@ Let's add another pending test:
 ```rb
 describe Dog do
   it "has the class Dog"
-  it "has a String for an Name"
+  it "has a String for a Name"
 end
 ```
 **Q. Run `rspec` again. Anything crazy going on?**
@@ -394,6 +397,8 @@ RSpec assertions have two components: `expectation` and `matcher`.
 
 >We use `expect(IUT)` to "wrap" the ***Item Under Test***, so that it supports the `to` method which accepts a matcher. Here we are wrapping an object or block in expect, call to or to_not (aliased as not_to) and pass it a matcher object
 
+[RSpec documentation Built in Matchers](https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers)
+
 Now let's make the test **fail**. Let's say we "expect dog to be a Integer":
 
 ```rb
@@ -432,13 +437,6 @@ Before moving on, let's change the first test so it passes again!
 
 2. Then we will review the solution together
 
->Solution:
-```rb
-  it "has a String for an Name" do
-    dog = Dog.new("Rover", 10)
-    expect(dog.name).to be_a(String)
-  end
-```
 
 ## You-Do: Create a new Spec (5 min)
 
@@ -514,12 +512,14 @@ describe Dog do
     context "when new hunger level" do
       context "is less than 0" do
         it "sets the hunger level to 0" do
+          @dog = new Dog("Rover", 10)
           @dog.set_hunger_level(-1)
           expect(@dog.hunger_level).to eq(0)
         end
       end
       context "is greater than 0" do
         it "sets our hunger level to the new hunger level" do
+          @dog = new Dog("Rover", 10)
           @dog.set_hunger_level(5)
           expect(@dog.hunger_level).to eq(5)
         end
@@ -601,18 +601,18 @@ As you can see, you can have `subject`, `let`, and `before:each` right next to e
 
 ## Garnet Example (5 min)
 
-We use RSpec to test GArnet, the attendance/homework tracking app. Before any changes get pushed up to our live server, they have to pass all the tests -- an automated system rejects the changes if they don't pass.
+We use RSpec to test Garnet, the attendance/homework tracking app. Before any changes get pushed up to our live server, they have to pass all the tests -- an automated system rejects the changes if they don't pass.
 
 [Here's what that looks like. Seem familiar?](https://travis-ci.org/ga-dc/garnet/builds/89503768#L241) Clearly there are a lot of tests that are just pending and don't do anything yet -- almost 60! These dramatically help us plan.
 
-## You-Do: Purrspec (20 min)
+## You-Do: Let's Go Shopping (20 min)
 
 **Instructions:**
 
 1. Fork and Clone the following repo:
-[Purrspec](https://github.com/ga-dc/purrspec)
+[rspec-shopping-excise](https://github.com/ga-wdi-exercises/rspec-shopping-exercise/tree/master)
 
-2. Take a look at the `cat.rb model`. Write unit tests in `cat_spec.rb` to to test the methods it contains
+2. Take a look at the `product.rb model`. Write unit tests in `product_spec.rb` to to test the methods it contains
 
 3. Feel free to refer to the RSpec documentation linked below for additional matchers to use when writing your tests
 
