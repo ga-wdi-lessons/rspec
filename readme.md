@@ -167,7 +167,7 @@ end
 
 ### You-Do - Modify Person.rb to fail tests (5 min)
 
-****Instructions:****
+**Instructions:**
 
 1. Fork and Clone the Rspec Person Example Repo: https://github.com/ga-dc/rspec_person_example
 
@@ -512,14 +512,12 @@ describe Dog do
     context "when new hunger level" do
       context "is less than 0" do
         it "sets the hunger level to 0" do
-          @dog = new Dog("Rover", 10)
           @dog.set_hunger_level(-1)
           expect(@dog.hunger_level).to eq(0)
         end
       end
       context "is greater than 0" do
         it "sets our hunger level to the new hunger level" do
-          @dog = new Dog("Rover", 10)
           @dog.set_hunger_level(5)
           expect(@dog.hunger_level).to eq(5)
         end
@@ -610,7 +608,7 @@ We use RSpec to test Garnet, the attendance/homework tracking app. Before any ch
 **Instructions:**
 
 1. Fork and Clone the following repo:
-[rspec-shopping-excise](https://github.com/ga-wdi-exercises/rspec-shopping-exercise/tree/master)
+[rspec-shopping-exercise](https://github.com/ga-wdi-exercises/rspec-shopping-exercise/tree/master)
 
 2. Take a look at the `product.rb model`. Write unit tests in `product_spec.rb` to to test the methods it contains
 
