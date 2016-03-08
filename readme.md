@@ -484,7 +484,41 @@ Given what we have done in class so far, spend the next 10 minutes getting our `
 
 ## DRYing it up (10 min)
 
-**Which lines on here repeat?***
+**Which lines on here repeat?**
+```rb
+describe Dog do
+  it "has the class Dog" do
+    dog = Dog.new("Rover", 10)
+    expect(dog).to be_a(Dog)
+  end
+  it "has a String for an Name" do
+    dog = Dog.new("Rover", 10)
+    expect(dog.name).to be_a(String)
+  end
+  it "has an initial hunger level thats an Integer" do
+    dog = Dog.new("Rover", 10)
+    expect(dog.hunger_level).to be_a(Integer)
+  end
+  describe "#set_hunger_level" do
+    context "when new hunger level" do
+      context "is less than 0" do
+        it "sets the hunger level to 0" do
+          @dog = Dog.new("Rover", 10)
+          @dog.set_hunger_level(-1)
+          expect(@dog.hunger_level).to eq(0)
+        end
+      end
+      context "is greater than 0" do
+        it "sets our hunger level to the new hunger level" do
+          @dog = Dog.new("Rover", 10)
+          @dog.set_hunger_level(2)
+          expect(@dog.hunger_level).to eq(2)
+        end
+      end
+    end
+  end
+end
+```
 
 Usually, you're going to have a whole bunch of tests that all do very similar things. Writing `dog = Dog.new("Rover", 10)` a bunch of times would get tiresome.
 
@@ -612,12 +646,14 @@ We use RSpec to test Garnet, the attendance/homework tracking app. Before any ch
 
 **Instructions:**
 
-1. Fork and Clone the following repo:
+ * Fork and Clone the following repo:
 [rspec-shopping-exercise](https://github.com/ga-wdi-exercises/rspec-shopping-exercise/tree/master)
 
-2. Take a look at the `product.rb model`. Write unit tests in `product_spec.rb` to to test the methods it contains
+  > Don't forget to run bundle install!
 
-3. Feel free to refer to the RSpec documentation linked below for additional matchers to use when writing your tests
+ * Take a look at the `product.rb model`. Write unit tests in `product_spec.rb` to to test the methods it contains
+
+ * Feel free to refer to the RSpec documentation linked below for additional matchers to use when writing your tests
 
   [RSpec documentation Built in Matchers](https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers).  Make sure you are on the version that corresponds to your installed library (v3.3).
 
@@ -629,7 +665,7 @@ Most testing frameworks, including RSpec, follow this flow:
   - Run
   - Teardown
 
-* `Red/Green/Refactor`
+Think `Red/Green/Refactor`
 
 * Each spec should run in isolation.  
 
