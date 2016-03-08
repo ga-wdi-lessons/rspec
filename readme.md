@@ -38,6 +38,10 @@ You'll see the term **test coverage** pop up pretty often. People are always aim
 
 **What are the reasons testing is so important? Why would employers love it so much?**
 
+<!-- Real World Example: DC Tech Startups -->
+<!--5 people from my cohort hired by Accella in charge of creating rspec tests  -->
+<!--Planning on talking about two startups interviewed with and how wished they would have integrated more testing earlier on when developing their applications, it's now a big focus for them, cut corners early on and now need to refactor code base -->
+
 We've asked you to write user stories. Writing unit tests is a very similar process.
 
 When we think of "testing" we tend to think of something you do *after* you've created something. With unit tests, you're encouraged to write the tests *first* before you even start writing actual code.
@@ -47,7 +51,8 @@ When we think of "testing" we tend to think of something you do *after* you've c
 Turn to a partner and discuss reasons of why would you write tests beforehand?
 
 >Answers
-When you write tests first, you're creating a tidy little checklist for yourself of things to complete. The **goal of unit tests** is that **when all of the tests pass, your app is complete**.
+
+>When you write tests first, you're creating a tidy little checklist for yourself of things to complete. The **goal of unit tests** is that **when all of the tests pass, your app is complete**.
 
 >You're used to thinking the other way around: when the app is complete, all the tests should pass. Writing the tests first forces you to think about what an app really *needs* to do to be complete. It forces you to scope things down to your MVP. It forces you to think of your app as a bunch of little pieces, rather than one big behoemeth.
 
@@ -68,9 +73,6 @@ When you write tests first, you're creating a tidy little checklist for yourself
 * Allows for automation and continuous integration, ensuring that our application won’t break
 
 * A little more time upfront means a lot of time saved down the line! (Think about refactoring)
-> Real World Example: DC Tech Startups
-
-<!--Planning on talking about two startups interviewed with and how wished they would have integrated more testing earlier on when developing their applications, it's now a big focus for them, cut corners early on and now need to refactor code base -->
 
 **DrawBacks**
 
@@ -437,12 +439,13 @@ Before moving on, let's change the first test so it passes again!
 
 2. Then we will review the solution together
 
+[Link to see solution code](https://github.com/ga-wdi-lessons/rspec/blob/master/solution.md)
 
 ## You-Do: Create a new Spec (5 min)
 
 **Instructions:**
 
-1. Write a Spec that confirms the following: "has an Integer for a hunger level"
+1. Write a Spec that confirms the following: "has an initial hunger level thats an Integer"
 
 ## We-Do: Additional Tests Using Context (5 min)
 
@@ -593,7 +596,9 @@ Interestingly, we could also replace each use of "dog" with "subject".
 
 RSpec also provides a "let" helper, which works the same way.  You can use it to identify other important components of the specification.
 
-As you can see, you can have `subject`, `let`, and `before:each` right next to each other.
+`let` is "lazy-evaluated", only evaluated when directly called upon and value is cached the first time
+
+You can have `subject`, `let`, and `before:each` right next to each other.
 
 ## Break (10 min)
 
@@ -624,9 +629,10 @@ Most testing frameworks, including RSpec, follow this flow:
   - Run
   - Teardown
 
-Each spec should run in isolation.  
+* `Red/Green/Refactor`
 
-We setup this spec, using "subject".  It is recreated for each spec (`it/do`).  And, if there is a teardown, it would be run next.  Our teardown here, is that all variables go out scope.  Everything starts fresh.
+* Each spec should run in isolation.  
+
 
 ## You-Do: Cereal Robot Exercise (20 min)
 
