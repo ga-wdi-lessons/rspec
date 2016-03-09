@@ -12,7 +12,7 @@ end
 
 ##You-Do: Solution 2:
 ```rb
-it "has an initial hunger level thats an Integer" do
+it "has a hunger level thats an Integer" do
   dog = Dog.new("Rover", 10)
   expect(dog.hunger_level).to be_a(Integer)
 end

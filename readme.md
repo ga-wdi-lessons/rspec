@@ -447,22 +447,23 @@ Before moving on, let's change the first test so it passes again!
 
 **Instructions:**
 
-1. Write a Spec that confirms the following: "has an initial hunger level thats an Integer"
+1. Write a Spec that confirms the following: "has a hunger level thats an Integer"
 
 ## We-Do: Additional Tests Using Context (5 min)
 
-Now, let's write a test for setting our dog's hunger level. Add in the following:
+Now, let's write a test for our method `set_hunger_level` that will be changing our dog's hunger level. Add in the following:
 
 ```rb
 describe "#set_hunger_level" do
   context "when new hunger level" do
     context "is less than 0" do
-      it "sets the hunger level to 0"
+      it "set the hunger level to 0"
     end
     context "is greater than 0" do
-      it "sets our hunger level to the new hunger level"
+      it "set our hunger level to the new hunger level"
     end
   end
+end
 ```
 Let's go through it a bit at a time:
 
@@ -655,7 +656,7 @@ We use RSpec to test Garnet, the attendance/homework tracking app. Before any ch
 
  * Take a look at the `product.rb model`. Write unit tests in `product_spec.rb` to to test the methods it contains
 
- * Feel free to refer to the RSpec documentation linked below for additional matchers to use when writing your tests
+ * You might need to refer to the RSpec documentation linked below for additional matchers to use when writing your tests
 
   [RSpec documentation Built in Matchers](https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers).  Make sure you are on the version that corresponds to your installed library (v3.3).
 
@@ -678,7 +679,7 @@ Think `Red/Green/Refactor`
 
 Split up into groups of 4. For 15 minutes, on a whiteboard, work with your group to draft the unit tests for this cereal-delivering robot.
 
-Your goal: When all the tests pass, that mean the robot works. However, you're only writing **pending** tests -- don't actually write the code that would make the tests pass.
+Your goal: When all the tests pass, that means the robot works. However, you're only writing **pending** tests -- don't actually write the code that would make the tests pass.
 
 Constraints: Try to write everything as `describe`, `context`, and `it` blocks. Method names should start with `#`.
 
