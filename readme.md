@@ -660,6 +660,10 @@ We use RSpec to test Garnet, the attendance/homework tracking app. Before any ch
 
   [RSpec documentation Built in Matchers](https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers).  Make sure you are on the version that corresponds to your installed library (v3.3).
 
+  ## Bonus!
+
+  Try a TDD approach to solving this exercise - https://github.com/ga-wdi-exercises/luhn_algorithm
+
 ## The Flow (5 min)
 
 Most testing frameworks, including RSpec, follow this flow:
@@ -671,17 +675,6 @@ Most testing frameworks, including RSpec, follow this flow:
 Think `Red/Green/Refactor`
 
 * Each spec should run in isolation.  
-
-
-## You-Do: Cereal Robot Exercise (20 min)
-
-[Watch this video.](https://www.youtube.com/watch?v=E2evC2xTNWg)
-
-Split up into groups of 4. For 15 minutes, on a whiteboard, work with your group to draft the unit tests for this cereal-delivering robot.
-
-Your goal: When all the tests pass, that means the robot works. However, you're only writing **pending** tests -- don't actually write the code that would make the tests pass.
-
-Constraints: Try to write everything as `describe`, `context`, and `it` blocks. Method names should start with `#`.
 
 ## Closing (5 min)
 
