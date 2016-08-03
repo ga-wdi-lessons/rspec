@@ -111,8 +111,6 @@ rspec_person_example/
 2 directories, 3 files
 ```
 
-***Note:*** We are using the term "models" here but don't worry about the naming too much. We will learn much more about models/model in Rails. For now just know that we will be using the term "model" to represent our ruby classes we will be defining.
-
 We have a Person model and a Person spec (a specification or test). This is the typical RSpec convention.  Specs live under the spec directory and echo the models in our system with the `_spec` suffix.
 
 Let's look further into ```person_spec.rb```
@@ -625,7 +623,7 @@ end
 ```
 What changed?  We've identified that "dog" is the "subject under test", converting the instance variable (@dog) into the "subject" helper.  This method takes a name (:dog) and block of code that returns the subject (a new Dog with a name of Rover and hunger level of 10).  It provides a method, named "dog", that we now use throughout our spec.  
 
-This is a way of ensuring the subject is available in every test, just like `before:each` and `before:all`. What's the difference? `subject` is semantic.
+This is a way of ensuring the subject is available in every test, just like `before:each` and `before:all`. What's the difference? `subject` is semantic.**Functionally, however, 'before' and 'subject' are the same.**
 
 Interestingly, we could also replace each use of "dog" with "subject".
 
@@ -643,7 +641,27 @@ You can have `subject`, `let`, and `before:each` right next to each other.
 
 We use RSpec to test Garnet, the attendance/homework tracking app. Before any changes get pushed up to our live server, they have to pass all the tests -- an automated system rejects the changes if they don't pass.
 
-[Here's what that looks like. Seem familiar?](https://travis-ci.org/ga-dc/garnet/builds/89503768#L241) Clearly there are a lot of tests that are just pending and don't do anything yet -- almost 60! These dramatically help us plan.
+[Here's what that looks like. Seem familiar?](https://travis-ci.org/ga-dc/garnet/builds/89503768#L241) Clearly there are a lot of tests that are just pending and don't do anything yet! These dramatically help us plan. But the main benefit is that tests tell you if you or anyone else breaks a class or function while working on the codebase at a later point. Everyone has to always run the test cases as they make the changes.
+
+## Reminderly Example (10 minutes)
+
+Let's take a look at tests in an app you're already familiar with.
+
+You can clone the
+[Reminderly repo](https://github.com/ga-wdi-exercises/reminderly/tree/master) and check out the testing branch.
+
+Fair warning, this is a contrived example because the CRUD apps we've made so far in this class have been on the simple side. But I did want to demonstrate that testing is something you, yes you, can implement right now to demonstrate to employers that you understand the principles behind it.
+
+The[rspec-rails](https://github.com/ga-wdi-exercises/reminderly/tree/master) gem has pretty strong documentation on setting up tests in your Rails application. This is a similar process to what we've already seen.
+
+As stated before, testing is something you want to keep in mind right when you start building your application and the goal is to get you to start writing tests before you write your functional code. That said, since you are in essence learning a new DSL and you're likely more comfortable writing functional code, it might be helpful the first few times you play around with testing to write tests after your code to get a better feel for the rspec syntax.  
+In this app, you'll notice I've written tests for the todo model and controller. With Rails apps, you'd generally want to focus on writing tests for model methods. We haven't covered model methods in this class, but we create them to manipulate our data. In this example, I concatenated the author_first_name and author_last_name fields to get a full name, which I can now use as a property.
+
+I wrote tests for my controller simply to demonstrate that it can be done, but I wouldn't recommend you do the same when your doing your own tests. The point of testing is to make sure your own code is working but a lot of testing done in the controller seem to be more of a test of Rails, ie expecting a template to be rendered.
+
+Another cool gem used to test web applications that can be used in tangent with rspec is called
+[Capybara](https://github.com/jnicklas/capybara). We're not going to go too much into it today, but Capybara allows you write tests to simulate how users interact with and experience your application in the browser such as how they sign in. In the Reminderly example, I wrote tests to see that the root page has the words "All Todos" at the top and to see that the value of the body key is being displayed.
+
 
 ## You-Do: Let's Go Shopping (20 min)
 
