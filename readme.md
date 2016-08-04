@@ -652,7 +652,7 @@ You can clone the
 
 Fair warning, this is a contrived example because the CRUD apps we've made so far in this class have been on the simple side. But I did want to demonstrate that testing is something you, yes you, can implement right now to demonstrate to employers that you understand the principles behind it.
 
-The[rspec-rails](https://github.com/ga-wdi-exercises/reminderly/tree/master) gem has pretty strong documentation on setting up tests in your Rails application. This is a similar process to what we've already seen.
+The [rspec-rails](https://github.com/rspec/rspec-rails) gem has pretty strong documentation on setting up tests in your Rails application. This is a similar process to what we've already seen.
 
 As stated before, testing is something you want to keep in mind right when you start building your application and the goal is to get you to start writing tests before you write your functional code. That said, since you are in essence learning a new DSL and you're likely more comfortable writing functional code, it might be helpful the first few times you play around with testing to write tests after your code to get a better feel for the rspec syntax.  
 In this app, you'll notice I've written tests for the todo model and controller. With Rails apps, you'd generally want to focus on writing tests for model methods. We haven't covered model methods in this class, but we create them to manipulate our data. In this example, I concatenated the author_first_name and author_last_name fields to get a full name, which I can now use as a property.
