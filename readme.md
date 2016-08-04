@@ -720,3 +720,4 @@ Think `Red/Green/Refactor`
 - [Mocks & Stubs](https://www.relishapp.com/rspec/rspec-mocks/docs)
 - [How to use a Test Double](http://www.martinfowler.com/bliki/TestDouble.html)
 - [RSpec Cheatsheets](https://www.anchor.com.au/wp-content/uploads/rspec_cheatsheet_attributed.pdf)
+- [Style Guides for Specs](http://betterspecs.org/)
