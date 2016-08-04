@@ -717,8 +717,6 @@ Think `Red/Green/Refactor`
 - [Learn Ruby via RSpec]( https://github.com/ga-dc/learn_ruby_via_rspec)
 - [Code School RSpec](https://www.codeschool.com/courses/testing-with-rspec)
 - [RSpec for Newbies](http://code.tutsplus.com/tutorials/ruby-for-newbies-testing-with-rspec--net-21297)
-- Mocks & Stubs]
-- https://www.relishapp.com/rspec/rspec-mocks/docs
-- http://www.martinfowler.com/bliki/TestDouble.html
-- RSpec Cheatsheets:
-- https://www.anchor.com.au/wp-content/uploads/rspec_cheatsheet_attributed.pdf
+- [Mocks & Stubs](https://www.relishapp.com/rspec/rspec-mocks/docs)
+- [How to use a Test Double](http://www.martinfowler.com/bliki/TestDouble.html)
+- [RSpec Cheatsheets](https://www.anchor.com.au/wp-content/uploads/rspec_cheatsheet_attributed.pdf)
