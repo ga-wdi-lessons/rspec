@@ -12,9 +12,9 @@
 
 ### Why do we implement tests in our applications? (5 min, 0:05)
 
-As our applications increase in complexity, we need a safety net.  We need something to ensure that we "Do no harm".  We need a battery of automated tests.  These are specifications about YOUR code that you can run to ensure your code is doing what it should.  
+As our applications increase in complexity, we need a safety net.  We need something to ensure that we "Do no harm".  We need a battery of automated tests.  These are specifications (specs) about YOUR code that you can run to ensure your code is doing what it should.  
 
-Think back to the way you code.  You create a part of a web page, then you browse to that page to test it.  To ensure that it is doing as you expect.  Then you add another feature.  And test both features.  Then you add a third feature and test... just the third feature.  Imagine if you had a battery of automated specs, which run against your code, so you can see if your new changes fit your new requirements and EVERY requirement that came before this.
+Think back to the way you code.  You create a part of a web page, then you browse to that page to test it, to ensure that it is doing what you expect.  Then you add another feature.  And test both features.  Then you add a third feature and test... just the third feature.  Imagine if you had a battery of automated specs, which run against your code, so you can see if your new changes fit your new requirements and EVERY requirement that came before this.
 
 ### Unit testing (5 min, 0:10)
 
@@ -26,7 +26,7 @@ Think back to the way you code.  You create a part of a web page, then you brows
 
   * As a rule of thumb, a good unit test should not be more than 5 lines long.
 
-  * Functional tests have a much wider focus. You'd use functional testing to make sure a sign-in form works, or that a user who doesn't have admin privileges can see this page, while a user who does have admin privileges can see that page.
+  * Functional tests have a much wider focus. You'd use functional testing to make sure a sign-in form works, or that a user who doesn't have admin privileges can't see a certain page for admins, while a user who *does* have admin privileges *can* see that page.
 
 Unit testing always should come before functional testing. Functional testing is much less crucial. Unit testing is so important, that...
 
@@ -44,7 +44,7 @@ You'll see the term **test coverage** pop up pretty often. People are always aim
 
 We've asked you to write user stories. Writing unit tests is a very similar process.
 
-When we think of "testing" we tend to think of something you do *after* you've created something. With unit tests, you're encouraged to write the tests *first* before you even start writing actual code.
+When we think of "testing" we tend to think of something you do **after** you've created something. With unit tests, you're encouraged to write the tests ***first***-- **before** you even start writing actual code.
 
 ### Turn and talk (5 min, 0:15)
 
@@ -643,27 +643,8 @@ We use RSpec to test Garnet, the attendance/homework tracking app. Before any ch
 
 [Here's what that looks like. Seem familiar?](https://travis-ci.org/ga-dc/garnet/builds/89503768#L241) Clearly there are a lot of tests that are just pending and don't do anything yet! These dramatically help us plan. But the main benefit is that tests tell you if you or anyone else breaks a class or function while working on the codebase at a later point. Everyone has to always run the test cases as they make the changes.
 
-## Reminderly Example (10 minutes, 2:15)
 
-Let's take a look at tests in an app you're already familiar with.
-
-You can clone the
-[Reminderly repo](https://github.com/ga-wdi-exercises/reminderly/tree/master) and check out the testing branch.
-
-Fair warning, this is a contrived example because the CRUD apps we've made so far in this class have been on the simple side. But I did want to demonstrate that testing is something you, yes you, can implement right now to demonstrate to employers that you understand the principles behind it.
-
-The [rspec-rails](https://github.com/rspec/rspec-rails) gem has pretty strong documentation on setting up tests in your Rails application. This is a similar process to what we've already seen.
-
-As stated before, testing is something you want to keep in mind right when you start building your application and the goal is to get you to start writing tests before you write your functional code. That said, since you are in essence learning a new DSL and you're likely more comfortable writing functional code, it might be helpful the first few times you play around with testing to write tests after your code to get a better feel for the rspec syntax.  
-In this app, you'll notice I've written tests for the todo model and controller. With Rails apps, you'd generally want to focus on writing tests for model methods. We haven't covered model methods in this class, but we create them to manipulate our data. In this example, I concatenated the author_first_name and author_last_name fields to get a full name, which I can now use as a property.
-
-I wrote tests for my controller simply to demonstrate that it can be done, but I wouldn't recommend you do the same when your doing your own tests. The point of testing is to make sure your own code is working but a lot of testing done in the controller seem to be more of a test of Rails, ie expecting a template to be rendered.
-
-Another cool gem used to test web applications that can be used in tangent with rspec is called
-[Capybara](https://github.com/jnicklas/capybara). We're not going to go too much into it today, but Capybara allows you write tests to simulate how users interact with and experience your application in the browser such as how they sign in. In the Reminderly example, I wrote tests to see that the root page has the words "All Todos" at the top and to see that the value of the body key is being displayed.
-
-
-## You-Do: Let's Go Shopping (20 min, 2:35)
+## You-Do: Let's Go Shopping (25 min, 2:30)
 
 **Instructions:**
 
@@ -672,7 +653,7 @@ Another cool gem used to test web applications that can be used in tangent with 
 
   > Don't forget to run bundle install!
 
- * Take a look at the `product.rb model`. Write unit tests in `product_spec.rb` to to test the methods it contains
+ * Take a look at the `product.rb model`. Write unit tests in `product_spec.rb` to test the methods it contains
 
  * You might need to refer to the RSpec documentation linked below for additional matchers to use when writing your tests
 
@@ -682,7 +663,28 @@ Another cool gem used to test web applications that can be used in tangent with 
 
   Try a TDD approach to solving this exercise - https://github.com/ga-wdi-exercises/luhn_algorithm
 
-## The Flow (5 min, 2:40)
+## Additional Material
+
+## Reminderly Example
+
+Let's take a look at tests in an app you're already familiar with.
+
+You can clone the
+[Reminderly repo](https://github.com/ga-wdi-exercises/reminderly/tree/master) and check out the testing branch.
+
+Fair warning, this is a contrived example because the CRUD apps we've made so far in this class have been on the simple side. But I did want to demonstrate that testing is something you can implement right now to demonstrate to employers that you understand the principles behind it.
+
+The [rspec-rails](https://github.com/rspec/rspec-rails) gem has pretty strong documentation on setting up tests in your Rails application. This is a similar process to what we've already seen.
+
+As stated before, testing is something you want to keep in mind right when you start building your application and the goal is to get you to start writing tests before you write your functional code. That said, since you are in essence learning a new DSL and you're likely more comfortable writing functional code, it might be helpful the first few times you play around with testing to write tests after your code to get a better feel for the rspec syntax.  
+
+In this app, you'll notice I've written tests for the todo model and controller. With Rails apps, you'd generally want to focus on writing tests for model methods. We haven't covered model methods in this class, but we create them to manipulate our data. In this example, I concatenated the author_first_name and author_last_name fields to get a full name, which I can now use as a property.
+
+I wrote tests for my controller simply to demonstrate that it can be done, but I wouldn't recommend you do the same when your doing your own tests. The point of testing is to make sure your own code is working but a lot of testing done in the controller seem to be more of a test of Rails, ie expecting a template to be rendered.
+
+Another widely-used gem used to functionally test web applications (that can be used in tandem with rspec) is called [Capybara](https://github.com/jnicklas/capybara). We're not going to go too much into it today, but Capybara allows you write tests to simulate how users interact with and experience your application in the browser such as how they sign in. In the Reminderly example, I wrote tests to see that the root page has the words "All Todos" at the top and to see that the value of the body key is being displayed.
+
+## The Flow
 
 Most testing frameworks, including RSpec, follow this flow:
 
@@ -694,7 +696,6 @@ Think `Red/Green/Refactor`
 
 * Each spec should run in isolation.  
 
-## Closing (5 min, 2:50)
 
 ### Quiz Questions:
 
