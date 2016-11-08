@@ -10,13 +10,13 @@
 
 ## Framing: Introduction to Test-Driven Development
 
-### Why do we implement tests in our applications? (5 min)
+### Why do we implement tests in our applications? (5 min, 0:05)
 
 As our applications increase in complexity, we need a safety net.  We need something to ensure that we "Do no harm".  We need a battery of automated tests.  These are specifications about YOUR code that you can run to ensure your code is doing what it should.  
 
 Think back to the way you code.  You create a part of a web page, then you browse to that page to test it.  To ensure that it is doing as you expect.  Then you add another feature.  And test both features.  Then you add a third feature and test... just the third feature.  Imagine if you had a battery of automated specs, which run against your code, so you can see if your new changes fit your new requirements and EVERY requirement that came before this.
 
-### Unit testing (5 min)
+### Unit testing (5 min, 0:10)
 
 **Unit tests** check the smallest level. The functionality of a specific method.
 
@@ -46,7 +46,7 @@ We've asked you to write user stories. Writing unit tests is a very similar proc
 
 When we think of "testing" we tend to think of something you do *after* you've created something. With unit tests, you're encouraged to write the tests *first* before you even start writing actual code.
 
-### Turn and talk (5 min)
+### Turn and talk (5 min, 0:15)
 
 Turn to a partner and discuss reasons of why would you write tests beforehand?
 
@@ -54,13 +54,13 @@ Turn to a partner and discuss reasons of why would you write tests beforehand?
 
 >When you write tests first, you're creating a tidy little checklist for yourself of things to complete. The **goal of unit tests** is that **when all of the tests pass, your app is complete**.
 
->You're used to thinking the other way around: when the app is complete, all the tests should pass. Writing the tests first forces you to think about what an app really *needs* to do to be complete. It forces you to scope things down to your MVP. It forces you to think of your app as a bunch of little pieces, rather than one big behoemeth.
+>You're used to thinking the other way around: when the app is complete, all the tests should pass. Writing the tests first forces you to think about what an app really *needs* to do to be complete. It forces you to scope things down to your MVP. It forces you to think of your app as a bunch of little pieces, rather than one big Behemoth.
 
 >In short: writing out unit tests, even if you just leave them pending, will make this class much easier, and make you look super-marketable.
 
 >This process of writing the tests **first** is called **Test-Driven Development**, or TDD.
 
-### TDD Overview: (5 min)
+### TDD Overview: (5 min, 0:20)
 
 ![TDD Example](http://joshldavis.com/img/tdd-vs-bdd/tdd-flowchart.png)
 
@@ -80,7 +80,7 @@ Turn to a partner and discuss reasons of why would you write tests beforehand?
 
 * Could be more costly to an organization when there are changes in requirements.
 
-## What is RSpec? (5 min)
+## What is RSpec? (5 min, 0:25)
 
 **RSpec** is a testing framework for the Ruby programming language.
 
@@ -89,7 +89,7 @@ RSpec makes it easier to write tests.  It's a Domain Specific Language for writi
 > DSL: "Domain Specific Language" that is created specifically to solve problems in a particular domain and is not intended to be able to solve problems outside it
 
 ---
-### We-Do: RSpec Example (5 min)
+### We-Do: RSpec Example (5 min, 0:30)
 
 Code is available here: [rspec_person_example](https://github.com/ga-dc/rspec_person_example)
 
@@ -165,7 +165,7 @@ end
 
 ---
 
-### You-Do - Modify Person.rb to fail tests (5 min)
+### You-Do - Modify Person.rb to fail tests (5 min, 0:35)
 
 **Instructions:**
 
@@ -185,7 +185,7 @@ end
 
 We are going to be creating something similar to the above example. Instead we will be writing a spec for creating a new ruby class of `Dog`
 
-### RSpec Set-up (5 min)
+### RSpec Set-up (5 min, 0:40)
 
 In your `wdi/sandbox` directory:
 
@@ -236,7 +236,7 @@ $ rspec --init
 
 >Within `.rspec` file add `--color` OR in `spec/spec_helper.rb` add `config.color = true`
 
-### Writing our first tests (10 min)
+### Writing our first tests (10 min, 0:50)
 
 Now, in our `models/dog.rb` file let's add the following code:
 
@@ -360,9 +360,9 @@ Finished in 0.0005 seconds (files took 0.07273 seconds to load)
 
 Adding `do...end` makes RSpec think this test is an actual test -- not pending anymore. There's no malfunctioning code inside this test, so RSpec is saying it passes. Asterisk `*` indicates a pending test, and dot `.` indicates a passing test.
 
-## Break (10 min)
+## Break (10 min, 1:00)
 
-## We-Do: Passing Our First Test (10 min)
+## We-Do: Passing Our First Test (10 min, 1:10)
 
 Let's make these tests actually test something. Inside the first test, make (but don't save) a new Dog and save it to a variable.
 
@@ -431,7 +431,7 @@ expected: "Integer"
 
 Before moving on, let's change the first test so it passes again!
 
-## You-Do: Make the second test pass (10 min)
+## You-Do: Make the second test pass (10 min, 1:20)
 
 **Instructions:**
 
@@ -441,13 +441,13 @@ Before moving on, let's change the first test so it passes again!
 
 [Link to see solution code](https://github.com/ga-wdi-lessons/rspec/blob/master/solution.md)
 
-## You-Do: Create a new Spec (5 min)
+## You-Do: Create a new Spec (5 min, 1:25)
 
 **Instructions:**
 
 1. Write a Spec that confirms the following: "has a hunger level thats an Integer"
 
-## We-Do: Additional Tests Using Context (5 min)
+## We-Do: Additional Tests Using Context (5 min, 1:30)
 
 Now, let's write a test for our method `set_hunger_level` that will be changing our dog's hunger level. Add in the following:
 
@@ -477,13 +477,13 @@ The hash `#` in front of `set_hunger_level` also doesn't do anything -- it's jus
 
  <!-- RSpec is all about making tests easy to read from an English standpoint. -->
 
-## You-Do: Making the `#set_hunger_level` tests pass (10 min)
+## You-Do: Making the `#set_hunger_level` tests pass (10 min, 1:40)
 
 **Instructions:**
 
 Given what we have done in class so far, spend the next 10 minutes getting our `'#set_hunger_level'` tests to pass!
 
-## DRYing it up (10 min)
+## DRYing it up (10 min, 1:50)
 
 **Which lines on here repeat?**
 ```rb
@@ -635,15 +635,15 @@ RSpec also provides a "let" helper, which works the same way.  You can use it to
 
 You can have `subject`, `let`, and `before:each` right next to each other.
 
-## Break (10 min)
+## Break (10 min, 2:00)
 
-## Garnet Example (5 min)
+## Garnet Example (5 min, 2:05)
 
 We use RSpec to test Garnet, the attendance/homework tracking app. Before any changes get pushed up to our live server, they have to pass all the tests -- an automated system rejects the changes if they don't pass.
 
 [Here's what that looks like. Seem familiar?](https://travis-ci.org/ga-dc/garnet/builds/89503768#L241) Clearly there are a lot of tests that are just pending and don't do anything yet! These dramatically help us plan. But the main benefit is that tests tell you if you or anyone else breaks a class or function while working on the codebase at a later point. Everyone has to always run the test cases as they make the changes.
 
-## Reminderly Example (10 minutes)
+## Reminderly Example (10 minutes, 2:15)
 
 Let's take a look at tests in an app you're already familiar with.
 
@@ -663,7 +663,7 @@ Another cool gem used to test web applications that can be used in tangent with 
 [Capybara](https://github.com/jnicklas/capybara). We're not going to go too much into it today, but Capybara allows you write tests to simulate how users interact with and experience your application in the browser such as how they sign in. In the Reminderly example, I wrote tests to see that the root page has the words "All Todos" at the top and to see that the value of the body key is being displayed.
 
 
-## You-Do: Let's Go Shopping (20 min)
+## You-Do: Let's Go Shopping (20 min, 2:35)
 
 **Instructions:**
 
@@ -682,7 +682,7 @@ Another cool gem used to test web applications that can be used in tangent with 
 
   Try a TDD approach to solving this exercise - https://github.com/ga-wdi-exercises/luhn_algorithm
 
-## The Flow (5 min)
+## The Flow (5 min, 2:40)
 
 Most testing frameworks, including RSpec, follow this flow:
 
@@ -694,7 +694,7 @@ Think `Red/Green/Refactor`
 
 * Each spec should run in isolation.  
 
-## Closing (5 min)
+## Closing (5 min, 2:50)
 
 ### Quiz Questions:
 
